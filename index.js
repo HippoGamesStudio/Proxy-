@@ -28,7 +28,7 @@ app.post('/chat', async (req, res) => {
 
         const emotionPrompt = `Ответ: "${aiReply}". Какая в нём эмоция? И пожалуйста не добавляй ничего на конце! Ответь одним словом: радость, грусть, злость, удивление, нейтрально.`;
 
-        const emotionResponse = await axios.post('https://api.groq.com/openai/v1/chat/completions', {
+        const emotionResponse = await axios.post('https://openrouter.ai/api/v1/chat/completions', {
             model: "nousresearch/nous-capybara-7b ",
             messages: [
                 {role: "user", content: emotionPrompt}
