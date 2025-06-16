@@ -12,7 +12,7 @@ app.post('/chat', async (req, res) => {
     try{
         const userMessage = req.body.message;
 
-        const response = await axios.post('https://api.groq.com/openai/v1/chat/completions', {
+        const response = await axios.post('https://openrouter.ai/api/v1/chat/completions', {
             model: "mistralai/mistarl-7b",
             messages: [
                 {role: "user", content: userMessage}
