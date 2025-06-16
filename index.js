@@ -26,7 +26,7 @@ app.post('/chat', async (req, res) => {
 
         const aiReply = response.data.choices[0].message.content;
 
-        const emotionPrompt = `Ответ: "${airReply}". Какая в нём эмоция? Ответь одним словом: радость, грусть, злость, удивление, нейтрально.`;
+        const emotionPrompt = `Ответ: "${aiReply}". Какая в нём эмоция? Ответь одним словом: радость, грусть, злость, удивление, нейтрально.`;
 
         const emotionResponse = await axios.post('https://api.groq.com/openai/v1/chat/completions', {
             model: "llama3-8b-8192",
