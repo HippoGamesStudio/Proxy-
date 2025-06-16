@@ -12,7 +12,20 @@ const models = [
     "meta-llama/llama-3-8b-instruct:free",
     "nousresearch/nous-capybara-7b:free",
     "openchat/openchat-3.5:free",
-    "mistralai/mistral-7b-instruct:free"
+    "mistralai/mistral-7b-instruct:free",
+    "meta-llama/llama-4-maverick:free",
+    "meta-llama/llama-4-scout:free",
+    "moonshotai/kimi-vl-a3b-thinking:free",
+    "nvidia/llama-3.1-nemotron-nano-8b-v1:free",
+    "google/gemini-2.5-pro-exp-03-25:free",
+    "mistralai/mistral-small-3.1-24b-instruct:free",
+    "openrouter/optimus-alpha",
+    "openrouter/quasar-alpha",
+    "deepseek/deepseek-v3-base:free",
+    "qwen/qwen2.5-vl-3b-instruct:free",
+    "deepseek/deepseek-chat-v3-0324:free",
+    "deepseek/deepseek-r1-zero:free",
+    "nousresearch/deephermes-3-llama-3-8b-preview:free"
 ];
 
 async function tryModel(userMessage, promptOnly = false){
