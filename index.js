@@ -6,20 +6,20 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const GROQ_API_KEY = process.env.GROQ_API_KEY;
+const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY;
 
 app.post('/chat', async (req, res) => {
     try{
         const userMessage = req.body.message;
 
         const response = await axios.post('https://api.groq.com/openai/v1/chat/completions', {
-            model: "llama3-8b-8192",
+            model: "mistralai/mistarl-7b",
             messages: [
                 {role: "user", content: userMessage}
             ]
         }, {
             headers: {
-                'Authorization': `Bearer ${GROQ_API_KEY}`,
+                'Authorization': `Bearer ${OPENROUTER_API_KEY}`,
                 'Content-Type': 'application/json'
             }
         });
@@ -29,13 +29,13 @@ app.post('/chat', async (req, res) => {
         const emotionPrompt = `Ответ: "${aiReply}". Какая в нём эмоция? И пожалуйста не добавляй ничего на конце! Ответь одним словом: радость, грусть, злость, удивление, нейтрально.`;
 
         const emotionResponse = await axios.post('https://api.groq.com/openai/v1/chat/completions', {
-            model: "llama3-8b-8192",
+            model: "mistralai/mistarl-7b",
             messages: [
                 {role: "user", content: emotionPrompt}
             ]
         }, {
             headers: {
-                'Authorization': `Bearer ${GROQ_API_KEY}`,
+                'Authorization': `Bearer ${OPENROUTER_API_KEY}`,
                 'Content-Type': 'application/json'
             }
         });
